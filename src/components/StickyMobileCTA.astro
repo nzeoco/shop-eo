@@ -1,0 +1,32 @@
+---
+import { ShoppingBag, ArrowRight } from 'lucide-react';
+---
+
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-4 md:hidden transform transition-transform duration-300 translate-y-full">
+    <div class="flex items-center justify-between gap-4">
+        <div class="flex flex-col">
+            <span class="text-xs text-green-600 font-bold uppercase tracking-wider">Best Value</span>
+            <span class="text-lg font-bold text-nzeo-dark">RM75 <span class="text-xs text-gray-400 font-normal line-through">RM90</span></span>
+        </div>
+        
+        <a href="#pricing" class="flex-1 bg-nzeo-primary text-white py-3 px-4 rounded-lg font-bold text-center flex items-center justify-center gap-2 shadow-lg shadow-nzeo-primary/20">
+            <span>Get Bundle</span>
+            <ArrowRight className="w-4 h-4" />
+        </a>
+    </div>
+    <div class="h-1 w-full bg-white"></div>
+</div>
+
+<script>
+    // Logic: Only show this bar after the user scrolls past the Hero section (600px)
+    // This prevents cluttering the first impression.
+    const stickyCta = document.getElementById('sticky-cta');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            stickyCta.classList.remove('translate-y-full');
+        } else {
+            stickyCta.classList.add('translate-y-full');
+        }
+    });
+</script>

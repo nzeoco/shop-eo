@@ -1,0 +1,44 @@
+---
+import { Zap, Brain, Activity } from 'lucide-react';
+
+const benefits = [
+    {
+        icon: Zap,
+        title: "Headache Relief",
+        desc: "Cooling relief in 30 seconds. Apply a drop to temples to soothe throbbing pain instantly.",
+    },
+    {
+        icon: Brain,
+        title: "Focus & Study",
+        desc: "Stay sharp during exams or deep work. Simply inhale the aroma to reset your mind.",
+    },
+    {
+        icon: Activity,
+        title: "Muscle Tension",
+        desc: "Relax tight shoulders and neck after a long day at the desk. Natural muscle relaxant.",
+    }
+];
+---
+
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-nzeo-dark mb-4">Why Keep NZEO Close?</h2>
+            <p class="text-nzeo-gray max-w-2xl mx-auto">More than just a scent. It's a functional tool for your daily well-being.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {benefits.map((item) => (
+                <div class="bg-nzeo-cream rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 border border-transparent hover:border-nzeo-primary/10">
+                    <div class="w-12 h-12 bg-nzeo-primary/10 rounded-xl flex items-center justify-center mb-6 text-nzeo-primary">
+                        <item.icon className="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold text-nzeo-dark mb-3">{item.title}</h3>
+                    <p class="text-nzeo-gray leading-relaxed">
+                        {item.desc}
+                    </p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

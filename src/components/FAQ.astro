@@ -1,0 +1,46 @@
+---
+import { ChevronDown } from 'lucide-react';
+
+const faqs = [
+    {
+        q: "Is this safe for children?",
+        a: "Yes, for children over 6 years old. For younger kids, we recommend diluting it with a carrier oil (like coconut oil) before applying to skin. Always do a patch test first."
+    },
+    {
+        q: "How long does shipping take?",
+        a: "We ship daily from Selangor via PosLaju or J&T. You should receive your order within 2-4 working days (West Malaysia) or 4-7 days (Sabah/Sarawak)."
+    },
+    {
+        q: "Can I ingest/drink this oil?",
+        a: "While our oil is 100% pure, we market it for topical (skin) and aromatherapy use only. We do not recommend ingesting essential oils without professional guidance."
+    },
+    {
+        q: "Does it leave an oily residue?",
+        a: "No. NZEO is formulated to absorb quickly. It leaves a cool, tingling sensation without the sticky 'minyak angin' feeling."
+    }
+];
+---
+
+<section class="py-20 bg-nzeo-cream border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 md:px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-nzeo-dark">Common Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            {faqs.map((item) => (
+                <details class="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden cursor-pointer">
+                    <summary class="flex items-center justify-between p-6 list-none font-semibold text-nzeo-dark hover:bg-gray-50 transition-colors">
+                        <span>{item.q}</span>
+                        <span class="transform transition-transform duration-200 group-open:rotate-180 text-nzeo-primary">
+                            <ChevronDown className="w-5 h-5" />
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-nzeo-gray leading-relaxed border-t border-gray-100/50 pt-4">
+                        {item.a}
+                    </div>
+                </details>
+            ))}
+        </div>
+    </div>
+</section>

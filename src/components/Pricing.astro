@@ -1,0 +1,107 @@
+---
+import { Check, Truck, ShieldCheck, Sparkles } from 'lucide-react';
+---
+
+<section id="pricing" class="py-24 bg-white relative">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10">
+        <div class="text-center mb-16 space-y-4">
+            <h2 class="text-4xl md:text-5xl font-serif font-medium text-nzeo-dark">Curated For You</h2>
+            <p class="text-nzeo-gray font-light text-lg">Select your preferred wellness ritual.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+            
+            <div class="group bg-white border border-gray-100 rounded-2xl p-2 transition-all duration-300 hover:border-gray-200 hover:shadow-soft flex flex-col">
+                <div class="relative h-64 rounded-xl overflow-hidden bg-gray-50 mb-6">
+                    <img src="/images/product-single.jpg" alt="Single Bottle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                
+                <div class="px-6 pb-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-serif text-nzeo-dark">The Starter</h3>
+                        <p class="text-sm text-gray-500 font-light mt-1">Perfect for first-time users.</p>
+                    </div>
+                    
+                    <div class="flex items-baseline gap-2 mb-8">
+                        <span class="text-gray-400 text-lg line-through font-light">RM55</span>
+                        <span class="text-3xl font-medium text-nzeo-dark">RM45</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-light">
+                            <Check className="w-4 h-4 text-nzeo-primary mt-0.5" />
+                            <span>1x 30ml Peppermint Oil</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-light">
+                            <Truck className="w-4 h-4 text-nzeo-primary mt-0.5" />
+                            <span>Standard Shipping Rates</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://osini.co/u/M0O3VM2aelxX" target="_blank" class="w-full py-4 rounded-lg border border-nzeo-primary text-nzeo-primary font-medium tracking-wide hover:bg-nzeo-primary hover:text-white transition-colors text-center uppercase text-xs">
+                        Select Starter
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative bg-white border border-nzeo-gold/40 rounded-2xl p-2 shadow-soft transform md:-translate-y-4 flex flex-col">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-nzeo-gold text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-glow flex items-center gap-2 z-20">
+                    <Sparkles className="w-3 h-3" />
+                    Most Popular
+                </div>
+
+                <div class="relative h-64 rounded-xl overflow-hidden bg-nzeo-cream mb-6 group">
+                    <img src="/images/product-bundle.jpg" alt="Bundle Set" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-nzeo-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <div class="px-6 pb-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-serif text-nzeo-primary">The Signature Set</h3>
+                        <p class="text-sm text-nzeo-gold font-medium mt-1">Double the relief. Free Shipping.</p>
+                    </div>
+
+                    <div class="flex items-baseline gap-2 mb-8">
+                        <span class="text-gray-400 text-lg line-through font-light">RM90</span>
+                        <span class="text-4xl font-serif text-nzeo-primary">RM75</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-gray-800">
+                            <div class="p-0.5 rounded-full bg-nzeo-primary/10"><Check className="w-3 h-3 text-nzeo-primary" /></div>
+                            <span class="font-medium">2x 30ml Premium Bottles</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-800">
+                            <div class="p-0.5 rounded-full bg-nzeo-primary/10"><Check className="w-3 h-3 text-nzeo-primary" /></div>
+                            <span class="font-medium">Priority Free Shipping</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-800">
+                            <div class="p-0.5 rounded-full bg-nzeo-primary/10"><ShieldCheck className="w-3 h-3 text-nzeo-primary" /></div>
+                            <span class="font-medium">Extended Guarantee</span>
+                        </li>
+                    </ul>
+
+                    <a id="btn-bundle" href="https://osini.co/Z/2Y9le1MyNRxd" target="_blank" class="w-full py-4 rounded-lg bg-nzeo-primary text-white font-bold tracking-wide shadow-lg shadow-nzeo-primary/20 hover:bg-nzeo-secondary transition-all text-center uppercase text-xs flex items-center justify-center gap-2">
+                        Get The Signature Set
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    const btnBundle = document.getElementById('btn-bundle');
+    if (btnBundle) {
+        btnBundle.addEventListener('click', () => {
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout', {
+                    value: 75.00,
+                    currency: 'MYR',
+                    content_name: 'Signature Bundle'
+                });
+            }
+        });
+    }
+</script>
