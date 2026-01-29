@@ -1,5 +1,5 @@
 ---
-import MetaPixel from '../components/MetaPixel.astro';
+// import MetaPixel from '../components/MetaPixel.astro'; // Removed to use direct injection below
 
 interface Props {
 	title: string;
@@ -7,9 +7,6 @@ interface Props {
 }
 
 const { title, description = "Natural relief for headaches and stress. 100% Pure Peppermint Essential Oil." } = Astro.props;
-
-// TODO: Replace with your actual Meta Pixel ID
-const PIXEL_ID = "1234567890"; 
 ---
 
 <!doctype html>
@@ -22,15 +19,30 @@ const PIXEL_ID = "1234567890";
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
-        <link rel="preload" as="image" href="/images/hero-hand.jpg" fetchpriority="high" />
+		<link rel="preload" as="image" href="/images/hero-hand.jpg" fetchpriority="high" />
 		
-        <MetaPixel pixelId={PIXEL_ID} />
-
+		<script is:inline>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			
+			fbq('init', '1696174234684887');
+			fbq('track', 'PageView');
+		</script>
+		<noscript>
+			<img height="1" width="1" style="display:none" 
+			src="https://www.facebook.com/tr?id=1696174234684887&ev=PageView&noscript=1" />
+		</noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 	</head>
-    <body class="bg-nzeo-cream text-nzeo-dark antialiased font-sans pb-24 md:pb-0 selection:bg-nzeo-primary selection:text-white">
+	<body class="bg-nzeo-cream text-nzeo-dark antialiased font-sans pb-24 md:pb-0 selection:bg-nzeo-primary selection:text-white">
 		<slot />
 	</body>
 </html>
