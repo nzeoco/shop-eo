@@ -23,8 +23,8 @@ import { Check, Truck, ShieldCheck, Sparkles, ArrowRight, Loader2 } from 'lucide
                     </div>
                     
                     <div class="flex items-baseline gap-2 mb-8">
-                        <span class="text-gray-400 text-lg line-through font-light">RM55</span>
-                        <span class="text-3xl font-medium text-nzeo-dark">RM45</span>
+                        <span class="text-gray-400 text-lg line-through font-light font-sans">RM55</span>
+                        <span class="text-3xl font-bold font-sans text-nzeo-dark">RM45</span>
                     </div>
 
                     <ul class="space-y-4 mb-8 flex-1">
@@ -42,7 +42,7 @@ import { Check, Truck, ShieldCheck, Sparkles, ArrowRight, Loader2 } from 'lucide
                         id="btn-single"
                         href="https://osini.co/d/KGegA8PMrzqb" 
                         target="_blank" 
-                        class="btn-checkout w-full py-4 rounded-lg border border-nzeo-primary text-nzeo-primary font-medium tracking-wide hover:bg-nzeo-primary hover:text-white transition-all text-center uppercase text-xs flex items-center justify-center gap-2"
+                        class="btn-checkout w-full py-4 rounded-lg border border-nzeo-primary text-nzeo-primary font-sans font-bold tracking-widest hover:bg-nzeo-primary hover:text-white transition-all text-center uppercase text-xs flex items-center justify-center gap-2"
                     >
                         <span>Order Starter Pack</span>
                         <ArrowRight className="w-3 h-3" />
@@ -51,7 +51,7 @@ import { Check, Truck, ShieldCheck, Sparkles, ArrowRight, Loader2 } from 'lucide
             </div>
 
             <div class="relative bg-white border border-nzeo-gold/40 rounded-2xl p-2 shadow-soft transform md:-translate-y-4 flex flex-col">
-                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-nzeo-gold text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-glow flex items-center gap-2 z-20">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-nzeo-gold text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-glow flex items-center gap-2 z-20 font-sans">
                     <Sparkles className="w-3 h-3" />
                     Most Popular
                 </div>
@@ -68,8 +68,8 @@ import { Check, Truck, ShieldCheck, Sparkles, ArrowRight, Loader2 } from 'lucide
                     </div>
 
                     <div class="flex items-baseline gap-2 mb-8">
-                        <span class="text-gray-400 text-lg line-through font-light">RM90</span>
-                        <span class="text-4xl font-serif text-nzeo-primary">RM75</span>
+                        <span class="text-gray-400 text-lg line-through font-light font-sans">RM90</span>
+                        <span class="text-4xl font-bold font-sans text-nzeo-primary">RM75</span>
                     </div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
@@ -91,7 +91,7 @@ import { Check, Truck, ShieldCheck, Sparkles, ArrowRight, Loader2 } from 'lucide
                         id="btn-bundle" 
                         href="https://osini.co/w/8qzLARjQWndw" 
                         target="_blank" 
-                        class="btn-checkout group w-full py-4 rounded-lg bg-nzeo-primary text-white font-bold tracking-wide shadow-lg shadow-nzeo-primary/20 hover:bg-nzeo-secondary transition-all text-center uppercase text-xs flex items-center justify-center gap-2"
+                        class="btn-checkout group w-full py-4 rounded-lg bg-nzeo-primary text-white font-sans font-bold tracking-widest shadow-lg shadow-nzeo-primary/20 hover:bg-nzeo-secondary transition-all text-center uppercase text-xs flex items-center justify-center gap-2"
                     >
                         <span>Get Signature Bundle</span>
                         <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -118,6 +118,7 @@ import { Check, Truck, ShieldCheck, Sparkles, ArrowRight, Loader2 } from 'lucide
 
     buttons.forEach(btn => {
         btn.addEventListener('click', function(e) {
+            // Optional: The link works natively, this script just adds the loading FX and Pixel
             const isBundle = this.id === 'btn-bundle';
             const val = isBundle ? 75.00 : 45.00;
             const name = isBundle ? 'Signature Bundle' : 'Starter Pack';
